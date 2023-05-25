@@ -1,0 +1,437 @@
+@mixin media($size)
+    @media screen and (max-width:#{$size}px)
+        @content
+
+@mixin resetBefore($left, $top, $width, $height)   
+    content: ""
+    position: absolute
+    left: $left
+    top: $top
+    width: $width
+    height: $height     
+
+html
+    font-size: 1px
+
+html,body
+    scroll-behavior: smooth
+
+a
+    text-decoration: none
+    &:hover
+        cursor: url("../img/icons/cursor.cur") , pointer
+ul
+    list-style: none
+    padding: 0
+
+.wrapper
+    margin: auto
+    width: 1120rem
+    box-sizing: border-box
+
+.header 
+    &__container
+        display: flex
+        justify-content: space-between
+        padding: 40rem 15rem
+
+    &__nav-menu
+
+        &-container
+            display: flex
+            column-gap: 25rem
+        &-item
+            display: block
+            position: relative
+            padding-top: 40rem
+            min-width: 40rem
+            font-size: 10rem
+            text-align: center
+            &::before
+                +resetBefore( 50%, 0rem, 40rem, 40rem)
+                background-size: contain
+                background-repeat: no-repeat
+                background-position-x: 50%
+                transform: translateX(-50%)
+            &--cart::before
+                // background-image: url(../img/svg/bag.svg)
+                background-image: url(../img/head-bag.png)
+            &--wish::before
+                // background-image: url(../img/svg/bag.svg)    
+                background-image: url(../img/head-bag.png)    
+            &--user::before
+                // background-image: url(../img/svg/person.svg)
+                background-image: url(../img/head-user.png)
+            &--home::before
+                // background-image: url(../img/svg/home.svg)   
+                background-image: url(../img/head-home.png)   
+    &__logo
+        content:""
+
+    &__search
+        &-form 
+            width: 180rem
+            position: relative
+        &-field 
+            width: 100%
+            font-size: 14rem
+            padding: 5rem
+            box-sizing: border-box
+            border: none
+            border-bottom: 1rem solid #000
+
+        &-button
+            position: absolute
+            width: 25rem
+            height: 25rem
+            top: 0
+            left: 0
+            background-color: #fff
+            border: none
+            background-image: url(../img/svg/search.svg)
+            background-size: cover
+            
+
+    &__main-menu
+        display: flex
+        justify-content: space-between
+        &-item
+            position: relative
+            display: block
+            
+            font-size: 16rem
+            font-weight: bold
+            text-transform: uppercase
+
+            &--gift
+                padding-right: 25rem 
+                &::before
+                    +resetBefore( calc(100% - 20rem), 0, 16rem, 16rem)
+                    background-repeat: no-repeat
+                    background-size: contain
+                    background-image: url("../img/menu.png")
+            &--giftadd
+                padding-right: 25rem 
+                &::before
+                    +resetBefore( calc(100% - 20rem), 0, 16rem, 16rem)
+                    background-repeat: no-repeat
+                    background-size: contain
+                    background-image: url("../img/menu1.png")
+            &--hand
+                padding-right: 25rem 
+                &::before
+                    +resetBefore( calc(100% - 20rem), 0, 16rem, 16rem)
+                    background-repeat: no-repeat
+                    background-size: contain
+                    background-image: url("../img/menu2.png")
+            &--link
+                padding-right: 25rem 
+                &::before
+                    +resetBefore( calc(100% - 20rem), 0, 16rem, 16rem)
+                    background-repeat: no-repeat
+                    background-size: contain
+                    background-image: url("../img/menu3.png")
+
+    &__devider 
+        background-image: linear-gradient(#DDD, #AAA )
+
+        &-text 
+            font-size: 12rem
+            color: #555
+            padding: 10px 0px
+
+
+
+.sidebar 
+    position: fixed
+    top: 50%
+    transform: translateY(-50%)
+    border-radius: 35rem
+    padding: 10px
+    box-shadow: 0 0 20rem #aaa
+    &__icon
+        display: block
+        width: 50px
+        height: 50px
+        background-size: cover
+
+        &-container
+            display: flex
+            flex-direction: column
+
+        &--cart-add
+            background-image: url("../img/aside.png")
+
+        &--cart-num 
+            background-image: url("../img/aside.png")
+
+        &--planet
+            background-image: url("../img/aside1.png")
+
+        &--hand
+            background-image: url("../img/aside2.png")
+
+        &--bell
+            background-image: url("../img/aside3.png")
+
+        &--call
+            background-image: url("../img/aside4.png")
+
+
+main
+    display: flex
+    column-gap: 40rem
+    padding-top: 70rem
+    padding-bottom: 70rem
+
+
+.fashion
+    width: calc( 60% - 20rem )
+
+    text-align: right
+
+    &__header
+        font-size: 32rem
+        margin: 0
+        margin-bottom: 30rem
+
+    &__price
+        font-size: 36rem
+        color: pink
+        &::before
+            content: "$"
+    &__discount 
+        font-size: 24rem
+        color: gray
+        text-decoration: line-through
+        margin-left: 15px
+        &::before
+            content: "$"
+            
+    &__feedback
+        content:""
+
+        &-container
+            display: flex
+            justify-content: end
+            margin: 20rem 0
+        &-stars
+            $star-size: 20px
+            background-color: orange
+            width: $star-size
+            height: $star-size
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)
+
+    &__details
+        content:""
+
+        &-header
+            font-size: 24rem
+            text-transform: uppercase
+
+        &-text
+            font-size: 14px
+            padding-right: 20px
+            &-items
+                position: relative
+            &-items::before
+                +resetBefore( 100% , 50% , 7px , 7px)
+                transform: translate(50%,-50%)
+                background-color: green
+                border-radius: 50%
+
+            &--pink
+                color: pink
+
+    &__form-caption 
+        font-size: 14px
+        font-weight: bold
+        text-transform: uppercase
+
+    &__radio-btn-container 
+        display: flex
+        justify-content: end
+        column-gap: 6px
+    &__radio-btn-container label
+        display: block
+        width: 30px
+        height: 30px
+        box-sizing: border-box
+        border: 1px solid grey
+        border-radius: 5px
+
+    &__radio-btn-container input
+        display: none
+
+    &__radio-btn-container input:checked + &__color
+        border: 3px solid red
+
+    &__color
+
+
+        &--pink
+            background-color: pink
+
+        &--black
+            background-color: black
+
+        &--white
+            background-color: #fff
+
+        &--blue
+            background-color: blue
+
+        &--orange
+            background-color: orange
+
+    &__radio-btn-container input:checked + &__size
+        color: white
+        background-color: red
+
+    &__size
+        font-size: 12rem
+        text-transform: uppercase
+        padding: 9px 0 
+        text-align: center
+        font-weight: bold
+        font-family: sans-serif
+
+    &__counter
+
+        &-container
+            display: inline-block 
+            box-sizing: border-box
+            border-radius: 10px
+            font-size: 10px
+            text-align: center
+            border: 1px solid gray
+            margin: 20rem 0
+
+        &-btn-up
+            padding: 20px
+            border: none
+            background-color: transparent
+
+        &-input
+            max-width: 60px
+            padding: 20px
+            box-sizing: border-box
+            border: none
+            border-right: 1px solid gray
+            border-left: 1px solid gray
+            text-align: center
+
+        &-btn-down
+            padding: 20px
+            border: none
+            background-color: transparent
+
+    &__submit-container
+        display: flex
+        justify-content: end
+        column-gap: 10px
+
+    &__button
+        padding: 15px 40px
+        font-size: 20px
+        box-sizing: border-box
+        border-radius: 20px
+        color: white
+
+        &--addcart 
+            background-color: green
+
+        &--buynow
+            background-color: black
+
+
+.slider
+    width: calc( 40% - 20px )
+    &__image 
+        position: relative
+
+        &-huge-picture
+            width: 100%
+
+        &-btn--find 
+            position: absolute
+            top: 20rem
+            left: 10rem
+            width: 25px
+            height: 25px
+            border-radius: 3px
+            filter: invert(1)
+            background-color: #535353
+            background-size: contain
+            background-image: url(../img/svg/search.svg)
+
+        &-container-btn
+            position: absolute
+            display: flex
+            column-gap: 10rem
+            bottom: 30rem
+            left: 30rem
+            background-color: rgba(255, 255, 255, 0.7)
+            border-radius: 10rem
+
+        &-btn
+            $icon-size: 30px
+            width: $icon-size
+            height: $icon-size   
+            background-size: contain         
+
+            &--cart
+                background-image: url(../img/svg/bag.svg)
+
+            &--remove                
+                background-image: url(../img/svg/delete.svg)
+
+            &--zoom                
+                background-image: url(../img/svg/zoom.svg)
+
+    &__carousel 
+        box-sizing: border-box
+        position: relative
+        margin-top: 20px
+        width: 100%
+
+        &-button
+            position: absolute
+            $btn-slider-size: 25rem
+            width: $btn-slider-size
+            height: $btn-slider-size
+            transform: translateY(-50%)
+            background-color: #aaa
+            border-radius: 50%
+            top: 50%
+            &::before
+                +resetBefore(0rem , 7.5rem , 7rem , 7rem)
+                border: 2px solid black
+                transform: rotate(-45deg)
+            &--pre 
+                left: 0rem
+                &::before
+                    border-right: none
+                    border-bottom: none
+                    left: 9rem
+            &--next 
+                right: 0rem
+                &::before
+                    left: 6rem
+                    border-left: none
+                    border-top: none
+
+        &-container 
+            
+            display: flex
+            column-gap: 10px
+            width: calc(100% - 80rem)
+            margin: auto  
+
+        &-img 
+            background-size: cover
+            box-sizing: border-box
+            border: solid 1px #aaa
+            width: calc(25% - 30rem / 4)
+
+                

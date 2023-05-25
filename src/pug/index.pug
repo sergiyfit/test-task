@@ -1,0 +1,132 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+        link(rel="stylesheet", href="css/styles.css")
+       
+    body 
+
+    header.header 
+        .header__container
+            nav.header__nav-menu
+                ul.header__nav-menu-container
+                    li
+                        a(href="#").header__nav-menu-item.header__nav-menu-item--cart cart
+                    li
+                        a(href="#").header__nav-menu-item.header__nav-menu-item--wish wish
+                    li
+                        a(href="#").header__nav-menu-item.header__nav-menu-item--user user
+                    li
+                        a(href="#").header__nav-menu-item.header__nav-menu-item--home home
+            .header__logo
+                img(src="../img/logo.jpg", alt="#")
+            .header__search
+                form(action="search", method="post").header__search-form 
+                    input(type="email", name="").header__search-field 
+                    button.header__search-button
+        ul.header__main-menu.wrapper            
+                li
+                    a(href="#").header__main-menu-item Lorem
+                li
+                    a(href="#").header__main-menu-item.header__main-menu-item--gift Lorem
+                li
+                    a(href="#").header__main-menu-item.header__main-menu-item--giftadd Lorem
+                li
+                    a(href="#").header__main-menu-item.header__main-menu-item--hand Lorem
+                li
+                    a(href="#").header__main-menu-item Lorem
+                li
+                    a(href="#").header__main-menu-item.header__main-menu-item--link Lorem
+        .header__devider 
+            p.header__devider-text.wrapper Lorem ipsum dolor sit elit. Labore dolores recusandae voluptatibus aut vero temporibus tempora. Aperiam dicta amet quidem placeat consectetur distinctio ad consequuntur nemo. Velit fugit maiores dolorem.     
+    aside.sidebar 
+        ul.sidebar__icon-container
+            li
+                a(href="#").sidebar__icon.sidebar__icon--cart-add
+            li
+                a(href="#").sidebar__icon.sidebar__icon--cart-num 2
+            li
+                a(href="#").sidebar__icon.sidebar__icon--planet
+            li
+                a(href="#").sidebar__icon.sidebar__icon--hand
+            li
+                a(href="#").sidebar__icon.sidebar__icon--bell
+            li
+                a(href="#").sidebar__icon.sidebar__icon--call
+    main.wrapper 
+        article.fashion
+            h1.fashion__header Lorem ipsum dolor sit amet.
+            strong.fashion__price 200
+            span.fashion__discount 800
+            .fashion__feedback-container
+                span.fashion__feedback-stars
+                span.fashion__feedback-stars
+                span.fashion__feedback-stars
+                span.fashion__feedback-stars
+                span.fashion__feedback-stars
+            h2.fashion__details-header Lorem, ipsum dolor.
+            ul.fashion__details-text
+                li.fashion__details-text-items Lorem ipsum dolor sit amet. 
+                li.fashion__details-text-items Lorem ipsum dolor sit amet.
+                li.fashion__details-text-items Lorem ipsum dolor sit amet.
+                li.fashion__details-text-items Lorem ipsum dolor sit amet.
+                | Lorem ipsum dolor sit amet.
+                .fashion__details-text--pink Lorem 
+            form(action="#", method="post") 
+                p.fashion__form-caption color 
+                .fashion__radio-btn-container 
+                    input(type="radio", name="color" id="pink")
+                    label(for="pink").fashion__color.fashion__color--pink
+                    input(type="radio", name="color" id="black")
+                    label(for="black").fashion__color.fashion__color--black
+                    input(type="radio", name="color" id="white")
+                    label(for="white").fashion__color.fashion__color--white
+                    input(type="radio", name="color" id="blue")
+                    label(for="blue").fashion__color.fashion__color--blue
+                    input(type="radio", name="color" id="orange")
+                    label(for="orange").fashion__color.fashion__color--orange
+                p.fashion__form-caption size: 
+                .fashion__radio-btn-container 
+                    input(type="radio", name="size" id="size_s")
+                    label(for="size_s").fashion__size S
+                        
+                    input(type="radio", name="size" id="size_m")
+                    label(for="size_m").fashion__size M
+
+                    input(type="radio", name="size" id="size_l")
+                    label(for="size_l").fashion__size L 
+
+                    input(type="radio", name="size" id="size_lx")
+                    label(for="size_lx").fashion__size XL
+                .fashion__counter-container 
+                    button.fashion__counter-btn-up +
+                    input(type="text", name="quantity" value="1").fashion__counter-input
+                    button.fashion__counter-btn-down -
+                .fashion__submit-container
+                    button(type="submit").fashion__button.fashion__button--addcart Add cart  
+                    button(type="submit").fashion__button.fashion__button--buynow Buy now
+        section.slider
+            .slider__image 
+                img(src="../img/fashion_cleanup.jpg", alt="#").slider__image-huge-picture
+                .slider__image-btn--find 
+                .slider__image-container-btn
+                    .slider__image-btn.slider__image-btn--cart
+                    .slider__image-btn.slider__image-btn--remove
+                    .slider__image-btn.slider__image-btn--zoom
+            .slider__carousel 
+                .slider__carousel-button.slider__carousel-button--pre 
+                .slider__carousel-container 
+                    img(src="../img/fashion_cleanup.jpg", alt="").slider__carousel-img 
+                    img(src="../img/fashion_cleanup.jpg", alt="").slider__carousel-img 
+                    img(src="../img/fashion_cleanup.jpg", alt="").slider__carousel-img 
+                    img(src="../img/fashion_cleanup.jpg", alt="").slider__carousel-img 
+                
+                .slider__carousel-button.slider__carousel-button--next 
+
+
+
+
+
