@@ -437,6 +437,8 @@ main
             border-radius: 7rem
             padding: 10rem 20rem
             font-size: 16rem
+        &:hover
+            border: 1rem solid $primary-red
 
         &::before
             +resetBefore(12rem , 22rem , 7rem , 7rem)
@@ -465,11 +467,12 @@ main
 
             &::after            
                 +resetBefore(auto , 12rem , 30rem , 30rem)
-                right: 7rem
+                right: 10rem
                 background-image: url(../img/svg/bag.svg)
                 background-size: cover
                 filter: invert(1)
                 +media(480)
+                    right: 7rem
                     top: 9rem
                     width: 20rem
                     height: 20rem
@@ -503,6 +506,11 @@ main
             background-color: #535353
             background-size: contain
             background-image: url(../img/svg/search.svg)
+            &:hover
+                filter: invert(0)
+                border: 1px solid $primary-red
+                background-color: #fff
+                
 
         &-container-btn
             position: absolute
@@ -518,7 +526,12 @@ main
             $icon-size: 30rem
             width: $icon-size
             height: $icon-size   
-            background-size: contain  
+            background-size: contain
+            &:hover
+                background-color: pink
+                border-radius: 5rem 
+                transform: scale(1.2)
+                transition: all 0.5s ease
 
             &--cart
                 background-image: url(../img/svg/bag.svg)
@@ -552,6 +565,9 @@ main
             background-color: #e3e3e3
             border-radius: 50%
             top: 50%
+            &:hover
+                box-sizing: border-box
+                border: 1rem solid black
             &::before
                 +resetBefore(0rem , 7.5rem , 7rem , 7rem)
                 border: 2rem solid black
@@ -581,6 +597,8 @@ main
             box-sizing: border-box
             border: solid 1rem #e3e3e3
             width: calc(25% - 30rem / 4)
+            &:hover
+                border-color: $primary-red
             
 
                 
