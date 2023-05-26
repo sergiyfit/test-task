@@ -38,8 +38,8 @@ ul
 .wrapper
     margin: auto
     width: 1120rem
-    +media(1240)
-        padding-left: 80rem
+    +media(1160)
+        padding-left: 20rem
         padding-right: 20rem  
         width: 100% 
  
@@ -148,7 +148,9 @@ ul
             font-size: 16rem
             font-weight: bold
             text-transform: uppercase
-
+            color: #000
+            padding-bottom: 10rem
+            
             &--gift
                 padding-right: 25rem 
                 &::before
@@ -172,6 +174,8 @@ ul
                     background-image: url("../img/menu2.png")
             &--link
                 padding-right: 25rem 
+
+
                 &::before
                     +resetBefore( calc(100% - 20rem), 0, 16rem, 16rem)
                     background-repeat: no-repeat
@@ -249,11 +253,14 @@ main
           
 .fashion
     text-align: right
+    box-sizing: border-box
     width: calc( 100% - 480rem)
     +media(1024) 
         width: calc( 100% - 380rem)
     +media(840)
         width: 100% 
+        max-width: 640rem
+        padding-left: 80rem
 
 
 
@@ -422,8 +429,9 @@ main
     +media(1024) 
         width: 380rem
     +media(840)
+        max-width: 640rem
         width: 100% 
-
+        padding-left: 80rem
 
 
     &__image 
