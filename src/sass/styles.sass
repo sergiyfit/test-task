@@ -26,11 +26,13 @@ html
 
 html,body
     scroll-behavior: smooth    
-
+    font-family: sans-serif
 a
-    text-decoration: none
+    text-decoration: none    
     &:hover
         cursor: url("../img/icons/cursor.cur") , pointer
+        transform: scale(1.1)
+        transition: all 0.5s ease 
 ul
     list-style: none
     padding: 0
@@ -56,25 +58,28 @@ ul
 
         &-container
             display: flex
-            column-gap: 25rem
+            column-gap: 20rem
             +media(728)
                 column-gap: 10rem
 
         &-item
             display: block
             position: relative
-            padding-top: 40rem
+            padding-top: 45rem
             min-width: 40rem
-            font-size: 10rem
+            font-size: 12rem
+            text-transform: uppercase
             text-align: center
+            font-weight: bold
+            color: #989898
             &::before
-                +resetBefore( 50%, 0rem, 40rem, 40rem)
+                +resetBefore( 50%, 0rem, 50rem, 50rem)
                 background-size: contain
                 background-repeat: no-repeat
                 background-position-x: 50%
                 transform: translateX(-50%)
             &::after
-                +resetBefore( 50%, 46%, 15rem, 15rem)
+                +resetBefore( 50%, 50%, 15rem, 15rem)
                 background-size: contain
                 background-repeat: no-repeat
                 transform: translate(-50%,-50%)
@@ -120,8 +125,16 @@ ul
             padding: 5rem
             box-sizing: border-box
             border: none
-            border-bottom: 1rem solid #000
-
+            border-bottom: 1rem solid #c1c1c1
+            direction: rtl
+            &:placeholder
+                color: #838383
+                font-size: 21rem    
+            &:focus
+                outline: none
+                border: none
+                border-bottom: 1rem solid #000
+                
         &-button
             position: absolute
             width: 25rem
@@ -149,26 +162,30 @@ ul
             font-weight: bold
             text-transform: uppercase
             color: #000
+
+            padding-top: 3rem
             padding-bottom: 10rem
-            
+
+            $item-size: 22rem
+
             &--gift
                 padding-right: 25rem 
                 &::before
-                    +resetBefore( calc(100% - 20rem), 0, 16rem, 16rem)
+                    +resetBefore( calc(100% - $item-size), 0, $item-size, $item-size)
                     background-repeat: no-repeat
                     background-size: contain
                     background-image: url("../img/menu.png")
             &--giftadd
                 padding-right: 25rem 
                 &::before
-                    +resetBefore( calc(100% - 20rem), 0, 16rem, 16rem)
+                    +resetBefore( calc(100% - $item-size), 0, $item-size, $item-size)
                     background-repeat: no-repeat
                     background-size: contain
                     background-image: url("../img/menu1.png")
             &--hand
                 padding-right: 25rem 
                 &::before
-                    +resetBefore( calc(100% - 20rem), 0, 16rem, 16rem)
+                    +resetBefore( calc(100% - $item-size), 0, $item-size, $item-size)
                     background-repeat: no-repeat
                     background-size: contain
                     background-image: url("../img/menu2.png")
@@ -177,28 +194,29 @@ ul
 
 
                 &::before
-                    +resetBefore( calc(100% - 20rem), 0, 16rem, 16rem)
+                    +resetBefore( calc(100% - $item-size), 0, $item-size, $item-size)
                     background-repeat: no-repeat
                     background-size: contain
                     background-image: url("../img/menu3.png")
 
     &__devider 
-        background-image: linear-gradient(#DDD, #AAA )
+        background-image: linear-gradient(#dedede, #ededed )
         box-sizing: border-box
         &-text 
-            font-size: 12rem
+            font-size: 10rem
             color: #555
-            padding: 10rem 0rem
+            padding: 8rem 0rem
 
 
 .sidebar 
     position: fixed
     padding: 10rem
     top: 50%
+    left: 20rem
     background-color: white
     transform: translateY(-50%)
     border-radius: 35rem
-    box-shadow: 0 0 20rem #aaa
+    box-shadow: 0 0 20rem #838383
 
     &__icon
         display: block
@@ -271,7 +289,7 @@ main
 
     &__price
         font-size: 36rem
-        color: pink
+        color: $primary-red
         &::before
             content: "$"
     &__discount 
@@ -302,6 +320,7 @@ main
         &-header
             font-size: 24rem
             text-transform: uppercase
+            margin-bottom: 8rem
 
         &-text
             font-size: 14rem
@@ -321,6 +340,7 @@ main
         font-size: 14rem
         font-weight: bold
         text-transform: uppercase
+        padding: 10rem 0
 
     &__radio-btn-container 
         display: flex
@@ -328,10 +348,9 @@ main
         column-gap: 6rem
     &__radio-btn-container label
         display: block
-        width: 30rem
-        height: 30rem
+        width: 27rem
+        height: 27rem
         box-sizing: border-box
-        border: 1rem solid grey
         border-radius: 5rem
 
     &__radio-btn-container input
@@ -341,7 +360,7 @@ main
         border: 3rem solid $primary-red
 
     &__color
-
+        border: 2rem solid #c5c5c5
 
         &--pink
             background-color: pink
@@ -365,10 +384,11 @@ main
     &__size
         font-size: 12rem
         text-transform: uppercase
-        padding: 9rem 0 
+        padding: 7rem 0 
         text-align: center
         font-weight: bold
         font-family: sans-serif
+        border: 1rem solid $primary-red
 
     &__counter
 
@@ -378,7 +398,7 @@ main
             border-radius: 10rem
             font-size: 10rem
             text-align: center
-            border: 1rem solid gray
+            border: 1rem solid #838383
             margin: 20rem 0
 
         &-btn-up
@@ -391,8 +411,8 @@ main
             padding: 20rem
             box-sizing: border-box
             border: none
-            border-right: 1rem solid gray
-            border-left: 1rem solid gray
+            border-right: 1rem solid #838383
+            border-left: 1rem solid #838383
             text-align: center
 
         &-btn-down
@@ -406,21 +426,53 @@ main
         column-gap: 10rem
 
     &__button
+        position: relative
         padding: 15rem 40rem
         font-size: 20rem
         box-sizing: border-box
-        border-radius: 20rem
+        border-radius: 10rem
         color: white
+        border: none
         +media(480)
-            border-radius: 10rem
-            padding: 10rem 15rem
+            border-radius: 7rem
+            padding: 10rem 20rem
             font-size: 16rem
 
+        &::before
+            +resetBefore(12rem , 22rem , 7rem , 7rem)
+            transform: rotate(-45deg)
+            border: 2rem solid white
+            border-right: none
+            border-bottom: none
+            +media(480)
+                top: 16rem
+                width: 5rem
+                height: 5rem
+
+
         &--addcart 
-            background-color: $primary-green
+            background-color: black
 
         &--buynow
-            background-color: black
+            background-color: $primary-green
+            padding-left: 50rem 
+            padding-right: 50rem 
+            +media(480)
+                padding-left: 30rem 
+                padding-right: 30rem 
+            &::before
+                left: 12rem
+
+            &::after            
+                +resetBefore(auto , 12rem , 30rem , 30rem)
+                right: 7rem
+                background-image: url(../img/svg/bag.svg)
+                background-size: cover
+                filter: invert(1)
+                +media(480)
+                    top: 9rem
+                    width: 20rem
+                    height: 20rem
 
 
 .slider
@@ -496,7 +548,7 @@ main
             width: $btn-slider-size
             height: $btn-slider-size
             transform: translateY(-50%)
-            background-color: #aaa
+            background-color: #e3e3e3
             border-radius: 50%
             top: 50%
             &::before
@@ -526,7 +578,7 @@ main
         &-img 
             background-size: cover
             box-sizing: border-box
-            border: solid 1rem #aaa
+            border: solid 1rem #e3e3e3
             width: calc(25% - 30rem / 4)
             
 
