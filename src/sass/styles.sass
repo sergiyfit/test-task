@@ -331,10 +331,10 @@ main
                 +resetBefore( 100% , 50% , 7rem , 7rem)
                 transform: translate(50%,-50%)
                 background-color: $primary-green
-                border-radius: 50%
+                border-radius: 50% 
 
             &--pink
-                color: pink
+                color: $primary-red
 
     &__form-caption 
         font-size: 14rem
@@ -512,12 +512,13 @@ main
             left: 30rem
             background-color: rgba(255, 255, 255, 0.7)
             border-radius: 10rem
+            padding: 7rem
 
         &-btn
             $icon-size: 30rem
             width: $icon-size
             height: $icon-size   
-            background-size: contain         
+            background-size: contain  
 
             &--cart
                 background-image: url(../img/svg/bag.svg)
